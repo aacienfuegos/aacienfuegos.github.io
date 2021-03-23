@@ -12,15 +12,44 @@ img.profile{
 
 }
 
+h1{
+				color: #8FBCBB;				
+}
+
+h2.subtitle{
+				color: #D8DEE9;				
+}
+h2.bottom{
+				color: #D8DEE9;				
+				margin-top: 32%;
+}
+
+p{
+				color: #D8DEE9;				
+}
+
+.fa_custom{
+				display: inline;
+				color: #8FBCBB;				
+				margin-right: 5%;
+				text-align: center;
+}
+.fa_custom.start{
+				margin-inline-start: 25%;
+}
+.fa_custom.end{
+				margin-inline-end: 10%;
+}
+
+
 .center{
 				margin-left: auto;
 				margin-right: auto;
+				text-align: center;
 }
 
 .center_abs{
 				position: absolute;
-
-				margin-top: 10px;
 
 				left: 0;
 				right: 0;
@@ -29,8 +58,10 @@ img.profile{
 }
 
 .square{
-				height: 700px;
-				width: 600px;
+				height: 80%;
+				width: 37%;
+
+				margin-top: 4%;
 
 				background-color: #3B4252;
 }
