@@ -27,6 +27,7 @@ body{
   font-size: 20px;
   letter-spacing: 3px;
   font-weight: 100;
+	font-family: "Mononoki", monospace;
 }
 .box p{
   text-align: justify;
