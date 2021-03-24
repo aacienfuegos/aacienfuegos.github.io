@@ -30,7 +30,7 @@ body{
 	font-family: "Mononoki", monospace;
 }
 .box h6{
-  font-size: 22px;
+  font-size: 25px;
   font-weight: 100;
 	font-family: "Mononoki", monospace;
 }
@@ -38,7 +38,7 @@ body{
 
 }
 ul{
-  margin: -10%;
+  margin: -50px;
   padding: 0;
 }
 .box li{
