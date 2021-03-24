@@ -7,6 +7,7 @@ body{
 .box{
   width: 450px;
   background-color: #3B4252;
+	border-radius: 10px;
   padding: 40px;
   text-align: center;
   margin: auto;
@@ -21,19 +22,23 @@ body{
 .box h1{
   font-size: 40px;
   letter-spacing: 4px;
-  font-weight: 100;
+  font-weight: 200;
 }
 .box h5{
-  font-size: 20px;
-  letter-spacing: 3px;
+  font-size: 22px;
+  font-weight: 100;
+	font-family: "Mononoki", monospace;
+}
+.box h6{
+  font-size: 22px;
   font-weight: 100;
 	font-family: "Mononoki", monospace;
 }
 .box p{
-  text-align: justify;
+
 }
 ul{
-  margin: 0;
+  margin: -10%;
   padding: 0;
 }
 .box li{
@@ -48,5 +53,5 @@ ul{
   transition: all ease-in-out 250ms;
 }
 .box li a:hover{
-  color: #b9b9b9;
+  color: #D8DEE9;
 }
