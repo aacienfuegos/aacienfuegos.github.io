@@ -1,0 +1,66 @@
+body {
+				background-color: #2E3440;
+}
+
+img.profile{
+				display: block;
+				width: 150px;
+				height: 150px%;
+
+				/*padding: 10% 0px 0px 0px;*/
+				margin-top: 10%;
+
+}
+
+h1{
+				color: #8FBCBB;				
+}
+
+h2.subtitle{
+				color: #D8DEE9;				
+}
+h2.bottom{
+				color: #D8DEE9;				
+				margin-top: 32%;
+}
+
+p{
+				color: #D8DEE9;				
+}
+
+.fa_custom{
+				color: #8FBCBB;				
+				padding-inline: 10% 10%;
+}
+
+.center{
+				margin-left: auto;
+				margin-right: auto;
+				text-align: center;
+}
+
+.center_abs{
+				position: absolute;
+
+				left: 0;
+				right: 0;
+				margin-left: auto;
+				margin-right: auto;
+}
+
+.square{
+				height: 80%;
+				width: 37%;
+
+				margin-top: 4%;
+
+				background-color: #3B4252;
+}
+
+.round{
+				border-radius: 50%;
+}
+
+.squircle{
+				border-radius: 10px;
+}
