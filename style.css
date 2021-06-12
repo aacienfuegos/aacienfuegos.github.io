@@ -20,27 +20,26 @@ body{
   height: 40%;
 }
 .box h1{
-  font-size: 60px;
-  letter-spacing: 4px;
-  font-weight: 200;
-  color: #8FBCBB
+  font-size: 3.75em;
+  font-weight: bold;
+  color: #81A1C1
 }
 .box h5{
-  font-size: 30px;
+  font-size: 2em;
   font-weight: bold;
   font-family: "Mononoki", monospace;
   color: #88C0D0
 }
 .box h6{
-  font-size: 30px;
+  font-size: 2em;
   font-weight: bold;
   font-family: "Mononoki", monospace;
   color: #88C0D0
 }
 .box p{
-  font-size: 23px;
+  font-size: 1.8em;
   font-weight: 100;
-	font-family: "Mononoki", monospace;
+  font-family: "Mononoki", monospace;
 }
 ul{
   margin: -50px;
@@ -48,15 +47,31 @@ ul{
 }
 .box li{
   display: inline-block;
-  margin: 6px;
+  margin: 1em;
   list-style: none;
 }
 .box li a{
   color: #8FBCBB;
   text-decoration: none;
-  font-size: 60px;
+  font-size: 4.5em;
   transition: all ease-in-out 250ms;
 }
 .box li a:hover{
   color: #D8DEE9;
+}
+
+/* For mobile phones: */
+@media only screen and (max-width: 768px) {
+	.box{
+	  width: 70%;
+	}
+	.box-img{
+	  width: 50%;
+	  height: 50%;
+	}
+	.box h1{ font-size: 2.75em; }
+	.box h5{ font-size: 1.75em; }
+	.box h6{ font-size: 1.75em; }
+	.box p{ font-size: 1.2em; }
+	.box li a{ font-size: 4em; }
 }
