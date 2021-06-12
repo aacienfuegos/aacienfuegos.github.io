@@ -5,10 +5,10 @@ body{
   background-size: cover;
 }
 .box{
-  width: 450px;
+  width: 50%;
   background-color: #3B4252;
-	border-radius: 10px;
-  padding: 40px;
+  border-radius: 10px;
+  padding: 10%;
   text-align: center;
   margin: auto;
   margin-top: 5%;
@@ -16,26 +16,31 @@ body{
 }
 .box-img{
   border-radius: 50%;
-  width: 200px;
-  height: 200px;
+  width: 40%;
+  height: 40%;
 }
 .box h1{
-  font-size: 40px;
+  font-size: 60px;
   letter-spacing: 4px;
   font-weight: 200;
+  color: #8FBCBB
 }
 .box h5{
-  font-size: 22px;
-  font-weight: 100;
-	font-family: "Mononoki", monospace;
+  font-size: 30px;
+  font-weight: bold;
+  font-family: "Mononoki", monospace;
+  color: #88C0D0
 }
 .box h6{
-  font-size: 25px;
-  font-weight: 100;
-	font-family: "Mononoki", monospace;
+  font-size: 30px;
+  font-weight: bold;
+  font-family: "Mononoki", monospace;
+  color: #88C0D0
 }
 .box p{
-
+  font-size: 23px;
+  font-weight: 100;
+	font-family: "Mononoki", monospace;
 }
 ul{
   margin: -50px;
@@ -47,7 +52,7 @@ ul{
   list-style: none;
 }
 .box li a{
-  color: #8FBCBB;				
+  color: #8FBCBB;
   text-decoration: none;
   font-size: 60px;
   transition: all ease-in-out 250ms;
