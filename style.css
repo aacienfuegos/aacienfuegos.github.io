@@ -11,13 +11,14 @@ body{
   padding: 10%;
   text-align: center;
   margin: auto;
-  margin-top: 5%;
+  margin-top: 3%;
   color: white;
 }
 .box-img{
   border-radius: 50%;
-  width: 40%;
-  height: 40%;
+  width: 25%;
+  height: 25%;
+  margin-top: -10em;
 }
 .box h1{
   font-size: 3.75em;
@@ -44,6 +45,7 @@ body{
 ul{
   margin: -50px;
   padding: 0;
+  margin-bottom: -10em;
 }
 .box li{
   display: inline-block;
@@ -68,10 +70,12 @@ ul{
 	.box-img{
 	  width: 50%;
 	  height: 50%;
+  	  margin-top: 0;
 	}
 	.box h1{ font-size: 2.75em; }
 	.box h5{ font-size: 1.75em; }
 	.box h6{ font-size: 1.75em; }
 	.box p{ font-size: 1.2em; }
 	.box li a{ font-size: 4em; }
+	.box ul{ margin-bottom: 0; }
 }
