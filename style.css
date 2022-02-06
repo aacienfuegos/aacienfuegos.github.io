@@ -55,11 +55,18 @@ ul{
 .box li a{
   color: #8FBCBB;
   text-decoration: none;
-  font-size: 4.5em;
   transition: all ease-in-out 250ms;
 }
 .box li a:hover{
   color: #D8DEE9;
+}
+
+.box li a .fa{
+  font-size: 4em;
+}
+
+.box li a .fa-file{
+  font-size: 3.5em;
 }
 
 /* For mobile phones: */
