@@ -1,0 +1,138 @@
+@page { size: A4; margin: 13mm 15mm; }
+
+:root {
+  --ink: #1f2933;
+  --soft: #52616f;
+  --rule: #c9d1d9;
+  --accent: #2e4a62;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Karla CV', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 9.4pt;
+  line-height: 1.42;
+  color: var(--ink);
+  background: #fff;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+  hyphens: none;
+}
+
+h1 {
+  font-family: 'Fraunces CV', Georgia, 'Times New Roman', serif;
+  font-weight: 600;
+  font-size: 21pt;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  color: var(--accent);
+}
+
+.role {
+  font-size: 11pt;
+  font-weight: 500;
+  color: var(--ink);
+  margin-top: 1.5mm;
+}
+
+.contact {
+  font-size: 8.6pt;
+  color: var(--soft);
+  margin-top: 2mm;
+  word-spacing: 0.02em;
+}
+
+header {
+  border-bottom: 1.2pt solid var(--accent);
+  padding-bottom: 3mm;
+  margin-bottom: 4mm;
+}
+
+h2 {
+  font-family: 'JetBrains Mono CV', 'Courier New', monospace;
+  font-size: 8.2pt;
+  font-weight: 500;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--accent);
+  border-bottom: 0.6pt solid var(--rule);
+  padding-bottom: 1.2mm;
+  margin-bottom: 2.6mm;
+  break-after: avoid;
+}
+
+section { margin-bottom: 4mm; }
+section.tight { margin-bottom: 3.2mm; }
+
+.summary { text-align: left; }
+
+.job { margin-bottom: 3.4mm; break-inside: avoid; }
+.job:last-child { margin-bottom: 0; }
+
+h3 {
+  font-size: 10pt;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.meta {
+  font-size: 8.6pt;
+  color: var(--soft);
+  font-weight: 500;
+  margin-bottom: 1.4mm;
+}
+
+ul { list-style: none; }
+
+li {
+  position: relative;
+  padding-left: 3.6mm;
+  margin-bottom: 1.1mm;
+}
+
+li::before {
+  content: "\2013";
+  position: absolute;
+  left: 0;
+  color: var(--soft);
+}
+
+.entry { margin-bottom: 2.2mm; break-inside: avoid; }
+.entry:last-child { margin-bottom: 0; }
+.entry p { font-size: 9.2pt; }
+.entry .meta { margin-bottom: 0.6mm; }
+.entry .note { color: var(--soft); font-size: 8.8pt; margin-top: 0.6mm; }
+
+.skills p { margin-bottom: 1.2mm; }
+.skills b { font-weight: 600; color: var(--accent); }
+
+.certs li { margin-bottom: 1mm; }
+
+body.short .xl { display: none; }
+body.short { font-size: 8.9pt; line-height: 1.34; }
+body.short section { margin-bottom: 3mm; }
+body.short .job { margin-bottom: 2.8mm; }
+
+body.short { font-size: 8.9pt; }
+body.short header { padding-bottom: 2.4mm; margin-bottom: 3mm; }
+body.short h1 { font-size: 19.5pt; }
+body.short .role { font-size: 10.4pt; }
+body.short h2 { margin-bottom: 2mm; }
+body.short li { margin-bottom: 0.7mm; }
+body.short .skills { font-size: 8.5pt; }
+body.short .skills p { margin-bottom: 0.9mm; }
+body.short .certs li { margin-bottom: 0.6mm; }
+body.short section { margin-bottom: 2.5mm; }
+body.short .job { margin-bottom: 2.4mm; }
+body.short .contact { font-size: 8.3pt; margin-top: 1.6mm; }
+
+@page compact { size: A4; margin: 11mm 14mm; }
+body.short { page: compact; }
+body.short li { margin-bottom: 0.5mm; }
+body.short .entry { margin-bottom: 1.6mm; }
+body.short .meta { margin-bottom: 1mm; }
+
+body:not(.short) { font-size: 9.7pt; line-height: 1.5; }
+body:not(.short) section { margin-bottom: 4.6mm; }
+body:not(.short) .job { margin-bottom: 4mm; }
