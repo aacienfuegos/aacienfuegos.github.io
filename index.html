@@ -403,26 +403,34 @@
   <div class="roadmap reveal">
     <h3 class="sub-label" data-es="En camino" data-en="On the way">En camino</h3>
     <p class="roadmap-note"
-       data-es="Diseñado y documentado, todavía sin desplegar."
-       data-en="Designed and documented, not deployed yet.">
-      Diseñado y documentado, todavía sin desplegar.
+       data-es="Lo siguiente. Nada de esto está desplegado todavía."
+       data-en="What comes next. None of this is deployed yet.">
+      Lo siguiente. Nada de esto está desplegado todavía.
     </p>
     <ul>
       <li>
-        <span class="r-name" data-es="Backups 3-2-1-1-0" data-en="3-2-1-1-0 backups">Backups 3-2-1-1-0</span>
-        <span class="r-text" data-es="El plan está escrito y revisado, y parte de asumir que el atacante ya tiene root en la propia máquina de backup: la clave que vive ahí puede escribir y ocultar, pero no borrar, y la copia que de verdad salva está en otra cuenta, inmutable, donde esa clave no llega. Verificación restaurando de verdad, porque un backup sin restaurar no cuenta como backup." data-en="The plan is written and reviewed, and it starts from assuming the attacker already has root on the backup machine itself: the key living there can write and hide, but never delete, and the copy that actually saves you sits in a separate account, immutable, where that key cannot reach. Verified by actually restoring, because a backup you have never restored does not count as a backup.">El plan está escrito y revisado, y parte de asumir que el atacante ya tiene root en la propia máquina de backup: la clave que vive ahí puede escribir y ocultar, pero no borrar, y la copia que de verdad salva está en otra cuenta, inmutable, donde esa clave no llega. Verificación restaurando de verdad, porque un backup sin restaurar no cuenta como backup.</span>
+        <span class="r-name" data-es="Backups inmutables" data-en="Immutable backups">Backups inmutables</span>
+        <span class="r-text" data-es="Aplicar la regla 3-2-1-1-0: copias que sobreviven a un atacante con control total de la máquina, imborrables durante meses y verificadas restaurando de verdad." data-en="Applying the 3-2-1-1-0 rule: copies that survive an attacker with full control of the machine, unerasable for months and verified by actually restoring them.">Aplicar la regla 3-2-1-1-0: copias que sobreviven a un atacante con control total de la máquina, imborrables durante meses y verificadas restaurando de verdad.</span>
       </li>
       <li>
-        <span class="r-name" data-es="Vigilancia de superficie" data-en="Attack surface watch">Vigilancia de superficie</span>
-        <span class="r-text" data-es="Diff de los registros de Certificate Transparency para enterarme si aparece un certificado o un subdominio a mi nombre que yo no he emitido." data-en="Diffing Certificate Transparency logs to catch a certificate or subdomain issued in my name that I never asked for.">Diff de los registros de Certificate Transparency para enterarme si aparece un certificado o un subdominio a mi nombre que yo no he emitido.</span>
+        <span class="r-name" data-es="Alta disponibilidad" data-en="High availability">Alta disponibilidad</span>
+        <span class="r-text" data-es="Un SAI para que un corte de luz no tire un nodo, y nodos nuevos en clúster con quórum para que perder una máquina no se lleve por delante el DNS, la autenticación y las aplicaciones." data-en="A UPS so a power cut does not take a node down, and new nodes in a quorum cluster so losing one machine does not take DNS, authentication and the applications with it.">Un SAI para que un corte de luz no tire un nodo, y nodos nuevos en clúster con quórum para que perder una máquina no se lleve por delante el DNS, la autenticación y las aplicaciones.</span>
       </li>
       <li>
-        <span class="r-name" data-es="El DNS al SIEM" data-en="DNS into the SIEM">El DNS al SIEM</span>
-        <span class="r-text" data-es="Llevar el registro de consultas DNS al SIEM para poder buscar hacia atrás un indicador de compromiso, en vez de solo mirar el tráfico de hoy." data-en="Feeding the DNS query log into the SIEM so I can hunt an indicator of compromise backwards, instead of only looking at today's traffic.">Llevar el registro de consultas DNS al SIEM para poder buscar hacia atrás un indicador de compromiso, en vez de solo mirar el tráfico de hoy.</span>
+        <span class="r-name" data-es="Vigilancia de superficie" data-en="External surface monitoring">Vigilancia de superficie</span>
+        <span class="r-text" data-es="Certificate Transparency para enterarme si aparece un certificado o un subdominio a mi nombre que yo no he emitido." data-en="Certificate Transparency to find out if a certificate or a subdomain in my name shows up that I did not issue.">Certificate Transparency para enterarme si aparece un certificado o un subdominio a mi nombre que yo no he emitido.</span>
       </li>
       <li>
-        <span class="r-name" data-es="Escalado de alertas" data-en="Alert escalation">Escalado de alertas</span>
-        <span class="r-text" data-es="Detectar una caída no sirve de nada si el aviso se queda en un panel que nadie mira. Falta cerrar el tramo entre la alerta y la persona: rutas de escalado, avisos que insisten hasta que alguien los reconoce y un canal que no dependa de la infraestructura que se acaba de caer." data-en="Detecting an outage is worthless if the alert sits on a dashboard nobody is looking at. What is missing is the last stretch, from alert to human: escalation paths, notifications that keep insisting until someone acknowledges them, and a channel that does not depend on the very infrastructure that just went down.">Detectar una caída no sirve de nada si el aviso se queda en un panel que nadie mira. Falta cerrar el tramo entre la alerta y la persona: rutas de escalado, avisos que insisten hasta que alguien los reconoce y un canal que no dependa de la infraestructura que se acaba de caer.</span>
+        <span class="r-name" data-es="Respuesta automatizada" data-en="Automated response">Respuesta automatizada</span>
+        <span class="r-text" data-es="Que detectar un ataque dispare la contención sola —aislar, bloquear, revocar— en vez de terminar en un aviso que alguien tiene que leer." data-en="Detecting an attack should trigger containment on its own — isolate, block, revoke — instead of ending in a notification someone has to read.">Que detectar un ataque dispare la contención sola —aislar, bloquear, revocar— en vez de terminar en un aviso que alguien tiene que leer.</span>
+      </li>
+      <li>
+        <span class="r-name" data-es="Monitorización avanzada" data-en="Advanced monitoring">Monitorización avanzada</span>
+        <span class="r-text" data-es="Pasar de saber que un servicio está caído a saber cómo se comporta: métricas por servicio con histórico, y fallos que llegan ya investigados por un agente con una propuesta de arreglo." data-en="Going from knowing a service is down to knowing how it behaves: per-service metrics with history, and failures that arrive already investigated by an agent with a proposed fix.">Pasar de saber que un servicio está caído a saber cómo se comporta: métricas por servicio con histórico, y fallos que llegan ya investigados por un agente con una propuesta de arreglo.</span>
+      </li>
+      <li>
+        <span class="r-name" data-es="Agentes proactivos" data-en="Proactive agents">Agentes proactivos</span>
+        <span class="r-text" data-es="Que el sistema no espere a que yo pida: que detecte qué hace falta, lo desarrolle, lo despliegue en el laboratorio y me lo deje probado esperando el visto bueno." data-en="The system should not wait for me to ask: it should spot what is needed, build it, deploy it to the lab and leave it tested, waiting for approval.">Que el sistema no espere a que yo pida: que detecte qué hace falta, lo desarrolle, lo despliegue en el laboratorio y me lo deje probado esperando el visto bueno.</span>
       </li>
     </ul>
   </div>
