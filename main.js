@@ -1,8 +1,6 @@
 (() => {
   'use strict';
 
-  const STORE_KEY = 'lang';
-  const LANGS = ['es', 'en'];
   const nodes = document.querySelectorAll('[data-es][data-en]');
   const toggle = document.getElementById('lang-toggle');
   const opts = toggle ? toggle.querySelectorAll('.lang-opt') : [];
@@ -11,20 +9,8 @@
   const menu = document.getElementById('menu');
   const toTop = document.getElementById('to-top');
 
-  const stored = () => {
-    try { return localStorage.getItem(STORE_KEY); } catch { return null; }
-  };
-  const remember = (lang) => {
-    try { localStorage.setItem(STORE_KEY, lang); } catch { /* modo privado */ }
-  };
-
-  const initial = () => {
-    const fromQuery = new URLSearchParams(location.search).get('lang');
-    if (LANGS.includes(fromQuery)) return fromQuery;
-    const saved = stored();
-    if (LANGS.includes(saved)) return saved;
-    return (navigator.language || 'es').toLowerCase().startsWith('es') ? 'es' : 'en';
-  };
+  // el idioma es una propiedad de la URL: / es espanol, /en/ es ingles
+  const current = document.documentElement.lang === 'en' ? 'en' : 'es';
 
   const apply = (lang) => {
     document.documentElement.lang = lang;
@@ -40,16 +26,7 @@
     if (toTop) toTop.setAttribute('aria-label', lang === 'es' ? 'Volver arriba' : 'Back to top');
   };
 
-  let current = initial();
   apply(current);
-
-  if (toggle) {
-    toggle.addEventListener('click', () => {
-      current = current === 'es' ? 'en' : 'es';
-      apply(current);
-      remember(current);
-    });
-  }
 
   if (menuBtn && menu) {
     let abierto = false;
