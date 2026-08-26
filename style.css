@@ -890,7 +890,39 @@ h1{
 }
 body.menu-open{overflow:hidden}
 
+.to-top{
+  display:none;
+  position:fixed;
+  right:var(--pad);
+  bottom:1.4rem;
+  z-index:38;
+  align-items:center;
+  justify-content:center;
+  width:46px;height:46px;
+  border:1px solid var(--line);
+  border-radius:999px;
+  background:rgba(32,36,44,.88);
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
+  color:var(--text-dim);
+  opacity:0;
+  transform:translateY(8px);
+  pointer-events:none;
+  transition:opacity .25s var(--ease),transform .25s var(--ease);
+}
+.to-top svg{
+  width:18px;height:18px;
+  fill:none;
+  stroke:currentColor;
+  stroke-width:1.8;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+.to-top.show{opacity:1;transform:none;pointer-events:auto}
+body.menu-open .to-top{opacity:0;pointer-events:none}
+
 @media (max-width:640px){
   .menu-btn{display:flex}
   .menu:not([hidden]){display:flex}
+  .to-top{display:flex}
 }

@@ -9,6 +9,7 @@
   const cvLinks = document.querySelectorAll('[data-cv-es][data-cv-en]');
   const menuBtn = document.getElementById('menu-btn');
   const menu = document.getElementById('menu');
+  const toTop = document.getElementById('to-top');
 
   const stored = () => {
     try { return localStorage.getItem(STORE_KEY); } catch { return null; }
@@ -36,6 +37,7 @@
       const txt = lang === 'es' ? ['Abrir menú', 'Cerrar menú'] : ['Open menu', 'Close menu'];
       menuBtn.setAttribute('aria-label', abierto ? txt[1] : txt[0]);
     }
+    if (toTop) toTop.setAttribute('aria-label', lang === 'es' ? 'Volver arriba' : 'Back to top');
   };
 
   let current = initial();
@@ -96,9 +98,19 @@
     reveals.forEach((el) => el.classList.add('in'));
   }
 
+  if (toTop) {
+    toTop.addEventListener('click', (e) => {
+      e.preventDefault();
+      scrollTo({ top: 0, behavior: motionOk ? 'smooth' : 'auto' });
+    });
+  }
+
   const bar = document.querySelector('.topbar');
-  if (bar) {
-    const onScroll = () => bar.classList.toggle('stuck', window.scrollY > 8);
+  if (bar || toTop) {
+    const onScroll = () => {
+      if (bar) bar.classList.toggle('stuck', window.scrollY > 8);
+      if (toTop) toTop.classList.toggle('show', window.scrollY > innerHeight * 1.2);
+    };
     addEventListener('scroll', onScroll, { passive: true });
     onScroll();
   }
