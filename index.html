@@ -1,27 +1,500 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<script src="https://use.fontawesome.com/d1341f9b7a.js"></script>
-		<link rel="stylesheet" href="style.css">
-		<title>Andrés Cienfuegos</title>
-	</head>
-	<body>
-		<div class="box">
-			<img src="assets/profile.jpg" alt="" class="box-img">
-			<h1>Andrés Cienfuegos</h1>
-			<h5>Telecomunications Engineering Student</h5>
-			<p>
-				I'm a telecomunications engineering student with big passion for innovative technologies. I'm always searching for new things to learn and new projects to start. If you want to know more about me, I will leave you some links so you can check what I'm doing at the moment!
-			</p>
-			<h6>Contact Me</h6>
-			<ul>
-				<li><a href="https://linkedin.com/in/aacienfuegos"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
-				<li><a href="https://github.com/aacienfuegos"><i class="fa fa-github-square" aria-hidden="true"></i></a></li>
-				<li><a href="assets/CV_Andres_AlvarezDeCienfuegos.pdf"><i class="fa fa-file" aria-hidden="true"></i></a></li>
-				<li><a href="mailto:andres.acienfuegos@gmail.com"><i class="fa fa-envelope-square" aria-hidden="true"></i></a></li>
-			</ul>
-		</div>
-	</body>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Andrés Álvarez de Cienfuegos — Information &amp; Data Security</title>
+<meta name="description" content="Information &amp; Data Security Manager en BBVA. Clasificación de la información, DLP, infraestructura self-hosted y desarrollo. Madrid.">
+<meta name="author" content="Andrés Álvarez de Cienfuegos Cremades">
+<meta name="theme-color" content="#20242C">
+
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Andrés Álvarez de Cienfuegos — Information & Data Security">
+<meta property="og:description" content="Information & Data Security Manager en BBVA. Clasificación de la información, DLP, infraestructura self-hosted y desarrollo. Madrid.">
+<meta property="og:url" content="https://andres.ciencre.xyz/">
+<meta property="og:image" content="https://andres.ciencre.xyz/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Andrés Álvarez de Cienfuegos — Information & Data Security">
+<meta property="og:locale" content="es_ES">
+<meta property="og:locale:alternate" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="canonical" href="https://andres.ciencre.xyz/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2320242C'/%3E%3Cpath d='M7.5 24 L16 7.5 L24.5 24' stroke='%23D08770' stroke-width='2.6' fill='none' stroke-linejoin='round'/%3E%3Cpath d='M11.4 19 h9.2' stroke='%2388C0D0' stroke-width='2.6'/%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..700&family=Karla:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+
+<a class="skip" href="#main" data-es="Saltar al contenido" data-en="Skip to content">Saltar al contenido</a>
+
+<header class="topbar">
+  <a href="#top" class="mark" aria-label="Andrés Álvarez de Cienfuegos">
+    <span class="mark-a">A</span><span class="mark-c">C</span>
+  </a>
+  <nav class="topnav">
+    <a href="#work" data-es="Trayectoria" data-en="Career">Trayectoria</a>
+    <a href="#projects" data-es="Proyectos" data-en="Projects">Proyectos</a>
+    <a href="#homelab" data-es="Homelab" data-en="Homelab">Homelab</a>
+    <a href="#contact" data-es="Contacto" data-en="Contact">Contacto</a>
+  </nav>
+  <button type="button" class="lang" id="lang-toggle" aria-label="Change language / Cambiar idioma">
+    <span class="lang-opt" data-lang="es">ES</span><span class="lang-sep">/</span><span class="lang-opt" data-lang="en">EN</span>
+  </button>
+</header>
+
+<main id="main">
+
+<section class="hero" id="top">
+  <div class="hero-grid">
+    <div class="hero-lead">
+      <p class="kicker reveal" data-es="Madrid · España" data-en="Madrid · Spain">Madrid · España</p>
+      <h1 class="reveal">
+        <span class="h1-line">Andrés</span>
+        <span class="h1-line h1-accent">Álvarez de</span>
+        <span class="h1-line">Cienfuegos</span>
+      </h1>
+      <p class="hero-role reveal">
+        <span data-es="Information &amp; Data Security" data-en="Information &amp; Data Security">Information &amp; Data Security</span>
+        <span class="dot">·</span>
+        <span>BBVA</span>
+      </p>
+      <p class="hero-text reveal"
+         data-es="Gobierno de la seguridad del dato en un grupo bancario global. Lo que de verdad me ocupa es el tramo entre escribir una política y que esté aplicada, que es donde casi todo se atasca. Antes, continuidad y resiliencia de ciberseguridad desde consultoría. Fuera de horas construyo y rompo mi propia infraestructura: un homelab segmentado donde practicar lo que en producción no se toca."
+         data-en="Data security governance in a global banking group. What actually occupies me is the stretch between writing a policy and having it applied, which is where most of them stall. Before that, cybersecurity continuity and resilience from the consulting side. Off the clock I build and break my own infrastructure: a segmented homelab where I get to practise what you never touch in production.">
+        Gobierno de la seguridad del dato en un grupo bancario global. Lo que de verdad me ocupa es el tramo entre escribir una política y que esté aplicada, que es donde casi todo se atasca. Antes, continuidad y resiliencia de ciberseguridad desde consultoría. Fuera de horas construyo y rompo mi propia infraestructura: un homelab segmentado donde practicar lo que en producción no se toca.
+      </p>
+      <div class="hero-cta reveal">
+        <a class="btn btn-primary" href="#projects" data-es="Ver proyectos" data-en="See projects">Ver proyectos</a>
+        <a class="btn btn-ghost" href="assets/CV_Andres_AlvarezDeCienfuegos.pdf" data-es="Descargar CV" data-en="Download CV">Descargar CV</a>
+      </div>
+    </div>
+
+    <aside class="hero-card reveal">
+      <div class="portrait">
+        <img src="assets/profile.jpg" alt="Andrés Álvarez de Cienfuegos" width="1200" height="1200" fetchpriority="high">
+      </div>
+      <dl class="specs">
+        <div>
+          <dt data-es="Puesto" data-en="Role">Puesto</dt>
+          <dd data-es="Information &amp; Data Security Manager" data-en="Information &amp; Data Security Manager">Information &amp; Data Security Manager</dd>
+        </div>
+        <div>
+          <dt data-es="Base" data-en="Based in">Base</dt>
+          <dd data-es="Madrid, España" data-en="Madrid, Spain">Madrid, España</dd>
+        </div>
+        <div>
+          <dt data-es="Formación" data-en="Education">Formación</dt>
+          <dd data-es="Ing. de Telecomunicación (Telemática), UPM" data-en="Telecommunications Engineering (Telematics), UPM">Ing. de Telecomunicación (Telemática), UPM</dd>
+        </div>
+        <div>
+          <dt data-es="Idiomas" data-en="Languages">Idiomas</dt>
+          <dd data-es="Español · Inglés (C1 Cambridge)" data-en="Spanish · English (Cambridge C1)">Español · Inglés (C1 Cambridge)</dd>
+        </div>
+      </dl>
+    </aside>
+  </div>
+</section>
+
+<section class="section" id="work">
+  <div class="section-head reveal">
+    <span class="num">01</span>
+    <h2 data-es="Trayectoria" data-en="Career">Trayectoria</h2>
+  </div>
+  <ol class="timeline">
+    <li class="tl-item reveal">
+      <div class="tl-when">
+        <span class="tl-now" data-es="Actualidad" data-en="Present">Actualidad</span>
+        <span class="tl-since" data-es="desde may. 2024" data-en="since May 2024">desde may. 2024</span>
+      </div>
+      <div class="tl-what">
+        <h3>BBVA</h3>
+        <p class="tl-role" data-es="Information &amp; Data Security Manager" data-en="Information &amp; Data Security Manager">Information &amp; Data Security Manager</p>
+        <p class="tl-desc"
+           data-es="Protección y seguridad del dato en un grupo bancario global, con foco en la confidencialidad y la privacidad de los datos personales. Bajo las directrices del grupo a las aplicaciones, donde el reto es el abanico de tecnologías: hay que proteger igual un sistema legacy de hace décadas que una aplicación en nube pública o con IA de por medio. Y a los controles de prevención de fuga en los puestos de usuario, donde lo importante no es bloquear sino dar la vía segura para hacer lo que el negocio necesita y explicarle el riesgo en sus términos."
+           data-en="Data protection and security in a global banking group, focused on the confidentiality and privacy of personal data. I take the group's directives down to the applications, where the challenge is the spread of technologies: a decades-old legacy system has to be protected just as well as an application running in public cloud or with AI in the mix. And down to the data loss prevention controls on user endpoints, where the point is not to block but to offer the safe route to do what the business needs, and to explain the risk in their own terms.">
+          Protección y seguridad del dato en un grupo bancario global, con foco en la confidencialidad y la privacidad de los datos personales. Bajo las directrices del grupo a las aplicaciones, donde el reto es el abanico de tecnologías: hay que proteger igual un sistema legacy de hace décadas que una aplicación en nube pública o con IA de por medio. Y a los controles de prevención de fuga en los puestos de usuario, donde lo importante no es bloquear sino dar la vía segura para hacer lo que el negocio necesita y explicarle el riesgo en sus términos.
+        </p>
+        <p class="tl-desc"
+           data-es="He desarrollado además el modelo de gobierno de la salida de información del grupo: por qué vías y con qué herramientas puede salir el dato para compartirlo con terceros. Todo esto pasa por coordinar perfiles muy distintos, desde las áreas de negocio hasta ingeniería, seguridad global y los equipos de seguridad de otras geografías, además de gestionar un equipo externo de cinco personas."
+           data-en="I have also developed the group's governance model for information leaving the bank: through which channels and with which tools data may leave to be shared with third parties. All of it runs on coordinating very different profiles, from the business areas to engineering, global security and the security teams in other geographies, as well as managing a five-person external team.">
+          He desarrollado además el modelo de gobierno de la salida de información del grupo: por qué vías y con qué herramientas puede salir el dato para compartirlo con terceros. Todo esto pasa por coordinar perfiles muy distintos, desde las áreas de negocio hasta ingeniería, seguridad global y los equipos de seguridad de otras geografías, además de gestionar un equipo externo de cinco personas.
+        </p>
+        <ul class="chips">
+          <li data-es="Clasificación de la información" data-en="Information classification">Clasificación de la información</li>
+          <li>DLP</li>
+          <li data-es="Privacidad" data-en="Privacy">Privacidad</li>
+          <li>RGPD</li>
+          <li data-es="Compartición con terceros" data-en="Third-party sharing">Compartición con terceros</li>
+          <li data-es="Relación con negocio" data-en="Business stakeholders">Relación con negocio</li>
+          <li data-es="Coordinación de equipo" data-en="Team coordination">Coordinación de equipo</li>
+        </ul>
+      </div>
+    </li>
+
+    <li class="tl-item reveal">
+      <div class="tl-when">
+        <span class="tl-now">2022 — 2024</span>
+        <span class="tl-since" data-es="1 año 8 meses" data-en="1 yr 8 mos">1 año 8 meses</span>
+      </div>
+      <div class="tl-what">
+        <h3>GMV</h3>
+        <p class="tl-role" data-es="Consultor de Continuidad y Resiliencia de Ciberseguridad" data-en="Cyber Security Continuity &amp; Resilience Consultant">Consultor de Continuidad y Resiliencia de Ciberseguridad</p>
+        <p class="tl-desc"
+           data-es="Consultoría de continuidad y resiliencia para clientes: análisis de impacto y de riesgos, planes de continuidad y de recuperación, y los simulacros que comprueban si esos planes aguantan cuando se prueban de verdad. También auditorías y acompañamiento a certificación, y consultoría de ciberseguridad para el sector de los vehículos de conducción autónoma."
+           data-en="Continuity and resilience consulting for clients: impact and risk analysis, business continuity and disaster recovery plans, and the drills that reveal whether those plans hold up once you actually test them. Also audits and certification support, plus cybersecurity consulting for the autonomous vehicle sector.">
+          Consultoría de continuidad y resiliencia para clientes: análisis de impacto y de riesgos, planes de continuidad y de recuperación, y los simulacros que comprueban si esos planes aguantan cuando se prueban de verdad. También auditorías y acompañamiento a certificación, y consultoría de ciberseguridad para el sector de los vehículos de conducción autónoma.
+        </p>
+        <ul class="chips">
+          <li>BCP / DRP</li>
+          <li>BIA</li>
+          <li>ISO 22301</li>
+          <li>ISO 31000</li>
+          <li data-es="Auditoría" data-en="Auditing">Auditoría</li>
+          <li data-es="Automoción" data-en="Automotive">Automoción</li>
+          <li>UNECE R155</li>
+        </ul>
+      </div>
+    </li>
+
+    <li class="tl-item reveal">
+      <div class="tl-when">
+        <span class="tl-now">2021 — 2022</span>
+        <span class="tl-since" data-es="prácticas UPM" data-en="UPM internship">prácticas UPM</span>
+      </div>
+      <div class="tl-what">
+        <h3>ACCIONA</h3>
+        <p class="tl-role" data-es="Becario de Ciberseguridad" data-en="Cyber Security Intern">Becario de Ciberseguridad</p>
+        <p class="tl-desc"
+           data-es="Herramientas de automatización y aplicaciones de visualización de ataques y contramedidas sobre MITRE ATT&amp;CK."
+           data-en="Automation tooling and visualization applications for attacks and countermeasures mapped to MITRE ATT&amp;CK.">
+          Herramientas de automatización y aplicaciones de visualización de ataques y contramedidas sobre MITRE ATT&amp;CK.
+        </p>
+        <ul class="chips">
+          <li>MITRE ATT&amp;CK</li>
+          <li>Python</li>
+          <li data-es="Automatización" data-en="Automation">Automatización</li>
+        </ul>
+      </div>
+    </li>
+
+    <li class="tl-item reveal">
+      <div class="tl-when">
+        <span class="tl-now">2018 — 2022</span>
+        <span class="tl-since" data-es="grado" data-en="degree">grado</span>
+      </div>
+      <div class="tl-what">
+        <h3>Universidad Politécnica de Madrid</h3>
+        <p class="tl-role"
+           data-es="Grado en Ingeniería de Telecomunicación — especialidad Telemática"
+           data-en="Engineer's degree in Telecommunications Engineering — Telematics specialty">Grado en Ingeniería de Telecomunicación — especialidad Telemática</p>
+        <p class="tl-desc"
+           data-es="Programa académico bilingüe. Grupo de teatro."
+           data-en="Bilingual academic programme. Theatre group.">
+          Programa académico bilingüe. Grupo de teatro.
+        </p>
+      </div>
+    </li>
+  </ol>
+
+  <div class="certs reveal">
+    <h3 class="certs-title" data-es="Certificaciones" data-en="Certifications">Certificaciones</h3>
+    <ul>
+      <li>
+        <span class="cert-name">ISO 22301 Lead Implementer</span>
+        <span class="cert-meta">BSI · 2023</span>
+      </li>
+      <li>
+        <span class="cert-name" data-es="UNECE/R155 Ciberseguridad para Vehículos" data-en="UNECE/R155 Cybersecurity for Vehicles">UNECE/R155 Ciberseguridad para Vehículos</span>
+        <span class="cert-meta">Advanced Fleet Management Consulting · 2022</span>
+      </li>
+      <li>
+        <span class="cert-name">C1 Advanced</span>
+        <span class="cert-meta">Cambridge English · 2017</span>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section class="section" id="projects">
+  <div class="section-head reveal">
+    <span class="num">02</span>
+    <h2 data-es="Proyectos" data-en="Projects">Proyectos</h2>
+  </div>
+  <p class="section-intro reveal"
+     data-es="Cosas que uso a diario y que corren en mi propia infraestructura, no demos de fin de semana."
+     data-en="Things I use daily, running on infrastructure I operate myself — not weekend demos.">
+    Cosas que uso a diario y que corren en mi propia infraestructura, no demos de fin de semana.
+  </p>
+
+  <div class="projects">
+    <article class="proj reveal">
+      <span class="proj-idx">01</span>
+      <div class="proj-body">
+        <h3>AgentOS</h3>
+        <p class="proj-tag" data-es="Orquestador de agentes" data-en="Agent orchestrator">Orquestador de agentes</p>
+        <p class="proj-desc"
+           data-es="Mi propio panel para poner agentes de Claude a trabajar. Abro un PR y aparece revisado; dejo tareas programadas de noche y por la mañana están hechas. Trae agentes para lo que hago a menudo —revisar código, buscar secretos filtrados y vulnerabilidades— y uno genérico para cualquier encargo suelto que le escriba. Lo veo trabajar en directo, línea a línea, en vez de esperar al final para saber si iba bien. Y lleva un tope de gasto mensual, porque un agente que se queda en bucle no debería salir caro."
+           data-en="My own dashboard for putting Claude agents to work. I open a PR and it comes back reviewed; I leave tasks scheduled overnight and by morning they are done. It ships with agents for the things I do often — reviewing code, hunting leaked secrets and vulnerabilities — plus a generic one for whatever else I type in. I watch it work live, line by line, instead of waiting until the end to find out whether it was going well. And it carries a monthly spend cap, because an agent stuck in a loop should not turn expensive.">
+          Mi propio panel para poner agentes de Claude a trabajar. Abro un PR y aparece revisado; dejo tareas programadas de noche y por la mañana están hechas. Trae agentes para lo que hago a menudo —revisar código, buscar secretos filtrados y vulnerabilidades— y uno genérico para cualquier encargo suelto que le escriba. Lo veo trabajar en directo, línea a línea, en vez de esperar al final para saber si iba bien. Y lleva un tope de gasto mensual, porque un agente que se queda en bucle no debería salir caro.
+        </p>
+        <ul class="chips">
+          <li>FastAPI</li><li>ARQ + Redis</li><li>SSE</li><li>APScheduler</li><li>Next.js</li><li>Docker</li>
+        </ul>
+        <a class="proj-link" href="https://github.com/aacienfuegos/agentos" rel="noopener">
+          <span data-es="Ver repositorio" data-en="View repository">Ver repositorio</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+        </a>
+      </div>
+    </article>
+
+    <article class="proj reveal">
+      <span class="proj-idx">02</span>
+      <div class="proj-body">
+        <h3>TripPlanner</h3>
+        <p class="proj-tag" data-es="Web + Android" data-en="Web + Android">Web + Android</p>
+        <p class="proj-desc"
+           data-es="Todo el viaje vive aquí: vuelos, alojamientos, actividades, gastos, equipaje y documentos en un único sitio, en vez de repartidos entre capturas, correos y notas del móvil. Y para llenarlo no hay que teclear: le pegas el correo de la aerolínea o lo que te devuelva un chat y se ordena solo. La app de Android va sin cuenta y sin conexión, en el avión o en un pueblo sin cobertura, que es justo donde necesitas mirar el plan. Lleva además un cuaderno de buceo dentro, porque me hacía falta."
+           data-en="The whole trip lives here: flights, stays, activities, expenses, packing and documents in one place, instead of scattered across screenshots, emails and phone notes. And filling it in takes no typing: paste the airline's email or whatever a chatbot gives you back and it sorts itself. The Android app runs with no account and no connection, on a plane or somewhere with no signal, which is exactly where you need to check the plan. It also carries a dive log inside, because I wanted one.">
+          Todo el viaje vive aquí: vuelos, alojamientos, actividades, gastos, equipaje y documentos en un único sitio, en vez de repartidos entre capturas, correos y notas del móvil. Y para llenarlo no hay que teclear: le pegas el correo de la aerolínea o lo que te devuelva un chat y se ordena solo. La app de Android va sin cuenta y sin conexión, en el avión o en un pueblo sin cobertura, que es justo donde necesitas mirar el plan. Lleva además un cuaderno de buceo dentro, porque me hacía falta.
+        </p>
+        <ul class="chips">
+          <li>Next.js</li><li>TypeScript</li><li>Zod</li><li>Prisma</li><li>PostgreSQL</li><li>Expo</li><li>SQLite</li>
+        </ul>
+        <a class="proj-link" href="https://github.com/aacienfuegos/tripplanner" rel="noopener">
+          <span data-es="Ver repositorio" data-en="View repository">Ver repositorio</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+        </a>
+      </div>
+    </article>
+
+    <article class="proj reveal">
+      <span class="proj-idx">03</span>
+      <div class="proj-body">
+        <h3 data-es="Domótica" data-en="Home automation">Domótica</h3>
+        <p class="proj-tag" data-es="Dos casas, red aparte" data-en="Two homes, separate network">Dos casas, red aparte</p>
+        <p class="proj-desc"
+           data-es="Dos casas domotizadas y gobernadas desde el mismo sitio: luces, enchufes, clima y el salón entero. Responde a la voz, al móvil y al panel de la pared, pero lo que más se nota es lo que no hay que tocar — rutinas por horario, cosas que se disparan al llegar a casa y sensores que arrancan el clima o te avisan sin que nadie pida nada. Los dispositivos viven en una VLAN propia con la salida al resto de la red bloqueada, lo que rompe el descubrimiento por mDNS que necesita HomeKit: en vez de abrir la VLAN entera, el router refleja únicamente el mDNS entre esos dos segmentos. Desde fuera se entra por túnel, con los puertos del router cerrados y doble factor."
+           data-en="Two homes automated and run from the same place: lights, plugs, climate and the whole living room. It answers to voice, to the phone and to the wall panel, but what you notice most is what nobody has to touch — schedule-driven routines, things that fire when you get home, and sensors that start the heating or ping you without anyone asking. The devices live on their own VLAN with outbound access to the rest of the network blocked, which breaks the mDNS discovery HomeKit needs: rather than opening the whole VLAN, the router reflects only mDNS between those two segments. From outside you come in through a tunnel, with the router's ports closed and two-factor auth.">
+          Dos casas domotizadas y gobernadas desde el mismo sitio: luces, enchufes, clima y el salón entero. Responde a la voz, al móvil y al panel de la pared, pero lo que más se nota es lo que no hay que tocar — rutinas por horario, cosas que se disparan al llegar a casa y sensores que arrancan el clima o te avisan sin que nadie pida nada. Los dispositivos viven en una VLAN propia con la salida al resto de la red bloqueada, lo que rompe el descubrimiento por mDNS que necesita HomeKit: en vez de abrir la VLAN entera, el router refleja únicamente el mDNS entre esos dos segmentos. Desde fuera se entra por túnel, con los puertos del router cerrados y doble factor.
+        </p>
+        <ul class="chips">
+          <li>Home Assistant</li><li>HAOS</li><li>Google Assistant</li><li>HomeKit local</li><li>VLAN IoT</li><li>mDNS repeater</li><li>2FA</li>
+        </ul>
+      </div>
+    </article>
+  </div>
+
+</section>
+
+<section class="section section-lab" id="homelab">
+  <div class="section-head reveal">
+    <span class="num">03</span>
+    <h2 data-es="Homelab" data-en="Homelab">Homelab</h2>
+  </div>
+  <p class="section-intro reveal"
+     data-es="Dos nodos en dos ciudades, montados y mantenidos por mí de punta a punta. Es donde toco de verdad lo que en una producción ajena no se puede tocar: diseñarlo, romperlo, arreglarlo y dejarlo escrito."
+     data-en="Two nodes in two cities, built and maintained by me end to end. It is where I actually get to touch what you cannot touch in someone else's production: design it, break it, fix it and write it down.">
+    Dos nodos en dos ciudades, montados y mantenidos por mí de punta a punta. Es donde toco de verdad lo que en una producción ajena no se puede tocar: diseñarlo, romperlo, arreglarlo y dejarlo escrito.
+  </p>
+
+  <div class="principles reveal">
+    <h3 class="sub-label" data-es="Principios" data-en="Principles">Principios</h3>
+    <ul>
+      <li>
+        <span class="p-name" data-es="Exposición cero" data-en="Zero exposure">Exposición cero</span>
+        <span class="p-text" data-es="Ningún puerto abierto al exterior. Lo que entra, entra por túnel." data-en="No inbound ports open. What comes in, comes in through a tunnel.">Ningún puerto abierto al exterior. Lo que entra, entra por túnel.</span>
+      </li>
+      <li>
+        <span class="p-name" data-es="Default-deny entre segmentos" data-en="Default-deny between segments">Default-deny entre segmentos</span>
+        <span class="p-text" data-es="El laboratorio no habla con producción. Si necesita un servicio, se le replica." data-en="Lab does not talk to production. If it needs a service, it gets its own copy.">El laboratorio no habla con producción. Si necesita un servicio, se le replica.</span>
+      </li>
+      <li>
+        <span class="p-name" data-es="Menor privilegio, siempre" data-en="Least privilege, always">Menor privilegio, siempre</span>
+        <span class="p-text" data-es="Cada integración con el alcance mínimo: tokens que solo escriben donde deben, permisos de API acotados, sudo limitado a lo justo." data-en="Every integration with the narrowest scope: tokens that only write where they must, scoped API permissions, sudo cut down to the bone.">Cada integración con el alcance mínimo: tokens que solo escriben donde deben, permisos de API acotados, sudo limitado a lo justo.</span>
+      </li>
+      <li>
+        <span class="p-name" data-es="Modelo de amenaza antes que herramienta" data-en="Threat model before tooling">Modelo de amenaza antes que herramienta</span>
+        <span class="p-text" data-es="Primero de quién me defiendo y qué pasa el día que esa capa caiga. Después, qué se instala." data-en="First, who I am defending against and what happens the day that layer falls. Then, what gets installed.">Primero de quién me defiendo y qué pasa el día que esa capa caiga. Después, qué se instala.</span>
+      </li>
+      <li>
+        <span class="p-name" data-es="Dimensionar a lo que hay" data-en="Size for what you have">Dimensionar a lo que hay</span>
+        <span class="p-text" data-es="Una herramienta que pide 16 GB para lo que otra resuelve con medio, fuera." data-en="A tool that wants 16 GB for what another does with half a gig doesn't make the cut.">Una herramienta que pide 16 GB para lo que otra resuelve con medio, fuera.</span>
+      </li>
+      <li>
+        <span class="p-name" data-es="Escrito, o no ha pasado" data-en="Written down, or it did not happen">Escrito, o no ha pasado</span>
+        <span class="p-text" data-es="Cada cambio a un changelog; cada decisión, con las alternativas que descarté." data-en="Every change to a changelog; every decision, with the alternatives I turned down.">Cada cambio a un changelog; cada decisión, con las alternativas que descarté.</span>
+      </li>
+    </ul>
+  </div>
+
+  <div class="reveal">
+    <h3 class="sub-label" data-es="Lo que corre ahí" data-en="What runs on it">Lo que corre ahí</h3>
+    <div class="cap-grid">
+      <div class="cap">
+        <h4 data-es="Detección y respuesta" data-en="Detection &amp; response">Detección y respuesta</h4>
+        <ul class="chips"><li>Wazuh</li><li>CrowdSec</li><li>Fail2ban</li><li>FIM</li><li data-es="PKI por agente" data-en="Per-agent PKI">PKI por agente</li></ul>
+      </div>
+      <div class="cap">
+        <h4 data-es="Identidad y acceso" data-en="Identity &amp; access">Identidad y acceso</h4>
+        <ul class="chips"><li>Authentik</li><li>SSO</li><li>forward-auth</li><li>SAML</li><li>OAuth / OIDC</li></ul>
+      </div>
+      <div class="cap">
+        <h4 data-es="Endurecimiento" data-en="Hardening">Endurecimiento</h4>
+        <ul class="chips"><li>TLS</li><li>Let's Encrypt</li><li data-es="CA propia" data-en="Own CA">CA propia</li><li>HSTS</li><li data-es="Gestión de secretos" data-en="Secrets management">Gestión de secretos</li></ul>
+      </div>
+      <div class="cap">
+        <h4 data-es="Acceso remoto" data-en="Remote access">Acceso remoto</h4>
+        <ul class="chips"><li>Cloudflare Tunnel</li><li>Tailscale</li><li data-es="Sin puertos abiertos" data-en="No open ports">Sin puertos abiertos</li></ul>
+      </div>
+      <div class="cap">
+        <h4 data-es="Red y DNS" data-en="Network &amp; DNS">Red y DNS</h4>
+        <ul class="chips"><li>OpenWrt</li><li>VLAN 802.1Q</li><li>nftables</li><li>AdGuard Home</li><li>WiFi multi-SSID</li></ul>
+      </div>
+      <div class="cap">
+        <h4 data-es="Virtualización" data-en="Virtualisation">Virtualización</h4>
+        <ul class="chips"><li>Proxmox VE</li><li>VMs</li><li>LXC</li><li>Docker</li><li>Dockhand</li><li>systemd</li></ul>
+      </div>
+      <div class="cap">
+        <h4 data-es="Monitorización" data-en="Monitoring">Monitorización</h4>
+        <ul class="chips"><li>Uptime Kuma</li><li>UptimeRobot</li><li>Netdata</li><li>ntfy</li><li>Homepage</li></ul>
+      </div>
+      <div class="cap">
+        <h4 data-es="IA aplicada" data-en="Applied AI">IA aplicada</h4>
+        <ul class="chips"><li>AgentOS</li><li>Claude Code</li><li>MCP</li><li data-es="Agentes propios" data-en="Custom agents">Agentes propios</li><li data-es="Revisión de PR" data-en="PR review">Revisión de PR</li></ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="roadmap reveal">
+    <h3 class="sub-label" data-es="En camino" data-en="On the way">En camino</h3>
+    <p class="roadmap-note"
+       data-es="Diseñado y documentado, todavía sin desplegar."
+       data-en="Designed and documented, not deployed yet.">
+      Diseñado y documentado, todavía sin desplegar.
+    </p>
+    <ul>
+      <li>
+        <span class="r-name" data-es="Backups 3-2-1-1-0" data-en="3-2-1-1-0 backups">Backups 3-2-1-1-0</span>
+        <span class="r-text" data-es="El plan está escrito y revisado, y parte de asumir que el atacante ya tiene root en la propia máquina de backup: la clave que vive ahí puede escribir y ocultar, pero no borrar, y la copia que de verdad salva está en otra cuenta, inmutable, donde esa clave no llega. Verificación restaurando de verdad, porque un backup sin restaurar no cuenta como backup." data-en="The plan is written and reviewed, and it starts from assuming the attacker already has root on the backup machine itself: the key living there can write and hide, but never delete, and the copy that actually saves you sits in a separate account, immutable, where that key cannot reach. Verified by actually restoring, because a backup you have never restored does not count as a backup.">El plan está escrito y revisado, y parte de asumir que el atacante ya tiene root en la propia máquina de backup: la clave que vive ahí puede escribir y ocultar, pero no borrar, y la copia que de verdad salva está en otra cuenta, inmutable, donde esa clave no llega. Verificación restaurando de verdad, porque un backup sin restaurar no cuenta como backup.</span>
+      </li>
+      <li>
+        <span class="r-name" data-es="Vigilancia de superficie" data-en="Attack surface watch">Vigilancia de superficie</span>
+        <span class="r-text" data-es="Diff de los registros de Certificate Transparency para enterarme si aparece un certificado o un subdominio a mi nombre que yo no he emitido." data-en="Diffing Certificate Transparency logs to catch a certificate or subdomain issued in my name that I never asked for.">Diff de los registros de Certificate Transparency para enterarme si aparece un certificado o un subdominio a mi nombre que yo no he emitido.</span>
+      </li>
+      <li>
+        <span class="r-name" data-es="El DNS al SIEM" data-en="DNS into the SIEM">El DNS al SIEM</span>
+        <span class="r-text" data-es="Llevar el registro de consultas DNS al SIEM para poder buscar hacia atrás un indicador de compromiso, en vez de solo mirar el tráfico de hoy." data-en="Feeding the DNS query log into the SIEM so I can hunt an indicator of compromise backwards, instead of only looking at today's traffic.">Llevar el registro de consultas DNS al SIEM para poder buscar hacia atrás un indicador de compromiso, en vez de solo mirar el tráfico de hoy.</span>
+      </li>
+      <li>
+        <span class="r-name" data-es="Escalado de alertas" data-en="Alert escalation">Escalado de alertas</span>
+        <span class="r-text" data-es="Un nodo estuvo caído 18 días con la monitorización avisando correctamente. El fallo no fue detectar: fue que el aviso no llegó a una persona. Eso es lo siguiente." data-en="A node was down for 18 days with monitoring alerting correctly. The failure was not detection: it was the alert never reaching a human. That is what comes next.">Un nodo estuvo caído 18 días con la monitorización avisando correctamente. El fallo no fue detectar: fue que el aviso no llegó a una persona. Eso es lo siguiente.</span>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section class="section" id="stack">
+  <div class="section-head reveal">
+    <span class="num">04</span>
+    <h2 data-es="Herramientas" data-en="Toolbox">Herramientas</h2>
+  </div>
+  <div class="stack">
+    <div class="stack-row reveal">
+      <h3 data-es="Seguridad" data-en="Security">Seguridad</h3>
+      <ul class="chips">
+        <li data-es="Clasificación de la información" data-en="Information classification">Clasificación de la información</li>
+        <li>DLP</li><li>SIEM / EDR</li><li>MITRE ATT&amp;CK</li>
+        <li data-es="Privacidad y RGPD" data-en="Privacy &amp; GDPR">Privacidad y RGPD</li>
+        <li data-es="Gobierno de seguridad" data-en="Security governance">Gobierno de seguridad</li>
+        <li data-es="Modelado de amenazas" data-en="Threat modelling">Modelado de amenazas</li>
+        <li data-es="Gestión de vulnerabilidades" data-en="Vulnerability management">Gestión de vulnerabilidades</li>
+        <li data-es="Continuidad y resiliencia" data-en="Continuity &amp; resilience">Continuidad y resiliencia</li>
+        <li>ISO 22301 · 31000</li>
+        <li data-es="Segmentación de red" data-en="Network segmentation">Segmentación de red</li>
+        <li data-es="Endurecimiento" data-en="Hardening">Endurecimiento</li>
+        <li>SSO / IdP</li>
+      </ul>
+    </div>
+    <div class="stack-row reveal">
+      <h3 data-es="IA" data-en="AI">IA</h3>
+      <ul class="chips">
+        <li>Claude API</li><li>Claude Code</li><li>MCP</li>
+        <li data-es="Diseño de agentes" data-en="Agent design">Diseño de agentes</li>
+        <li data-es="Validación de salidas con esquemas" data-en="Schema-validated outputs">Validación de salidas con esquemas</li>
+        <li data-es="Revisión de código asistida" data-en="AI-assisted code review">Revisión de código asistida</li>
+      </ul>
+    </div>
+    <div class="stack-row reveal">
+      <h3 data-es="Lenguajes" data-en="Languages">Lenguajes</h3>
+      <ul class="chips"><li>Python</li><li>TypeScript</li><li>Bash</li><li>SQL</li><li>Java</li><li>C / C++</li></ul>
+    </div>
+    <div class="stack-row reveal">
+      <h3 data-es="Desarrollo" data-en="Development">Desarrollo</h3>
+      <ul class="chips"><li>FastAPI</li><li>Next.js</li><li>React Native</li><li>Prisma</li><li>PostgreSQL</li><li>Redis</li></ul>
+    </div>
+    <div class="stack-row reveal">
+      <h3 data-es="Infraestructura" data-en="Infrastructure">Infraestructura</h3>
+      <ul class="chips"><li>GNU/Linux</li><li>Proxmox</li><li>Docker</li><li>Traefik</li><li>OpenWrt</li><li>Tailscale</li><li>GitHub Actions</li></ul>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="contact">
+  <div class="section-head reveal">
+    <span class="num">05</span>
+    <h2 data-es="Contacto" data-en="Contact">Contacto</h2>
+  </div>
+  <p class="contact-line reveal"
+     data-es="¿Trabajamos juntos o cacharreamos un rato?"
+     data-en="Want to work together — or just talk about tinkering?">
+    ¿Trabajamos juntos o cacharreamos un rato?
+  </p>
+  <ul class="links reveal">
+    <li>
+      <a href="mailto:andres.acienfuegos@gmail.com">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="2.5"/><path d="m3 7 9 6 9-6"/></svg>
+        <span class="link-key">Email</span>
+        <span class="link-val">andres.acienfuegos@gmail.com</span>
+      </a>
+    </li>
+    <li>
+      <a href="https://www.linkedin.com/in/aacienfuegos" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="3"/><path d="M7 10v7M7 7v.01M11.5 17v-4a2.5 2.5 0 0 1 5 0v4"/></svg>
+        <span class="link-key">LinkedIn</span>
+        <span class="link-val">in/aacienfuegos</span>
+      </a>
+    </li>
+    <li>
+      <a href="https://github.com/aacienfuegos" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-4 1.5-4-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.3 4.3 0 0 0-.1-3.2s-1-.3-3.4 1.3a11.7 11.7 0 0 0-6.2 0C6.6 2.6 5.6 2.9 5.6 2.9a4.3 4.3 0 0 0-.1 3.2A4.6 4.6 0 0 0 4.2 9.3c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>
+        <span class="link-key">GitHub</span>
+        <span class="link-val">@aacienfuegos</span>
+      </a>
+    </li>
+    <li>
+      <a href="assets/CV_Andres_AlvarezDeCienfuegos.pdf">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/></svg>
+        <span class="link-key">CV</span>
+        <span class="link-val" data-es="PDF · descargar" data-en="PDF · download">PDF · descargar</span>
+      </a>
+    </li>
+  </ul>
+</section>
+
+</main>
+
+<footer class="foot">
+  <p>© <span id="year">2026</span> Andrés Álvarez de Cienfuegos Cremades</p>
+  <p class="foot-meta" data-es="Hecho a mano · sin frameworks · alojado en GitHub Pages"
+     data-en="Handwritten · no frameworks · hosted on GitHub Pages">Hecho a mano · sin frameworks · alojado en GitHub Pages</p>
+</footer>
+
+<script src="main.js"></script>
+</body>
 </html>
