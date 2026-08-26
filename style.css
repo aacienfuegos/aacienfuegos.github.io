@@ -539,6 +539,35 @@ h1{
   font-weight:500;
 }
 
+.figures{
+  list-style:none;
+  margin:0 0 3rem;
+  padding-block:1.7rem;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(148px,1fr));
+  gap:1.4rem 1.2rem;
+  border-top:1px solid var(--line-soft);
+  border-bottom:1px solid var(--line-soft);
+}
+.figures li{display:grid;gap:.3rem;align-content:start}
+.fig-n{
+  font-family:var(--f-display);
+  font-weight:400;
+  font-size:clamp(2rem,1.3rem + 1.7vw,2.7rem);
+  font-variation-settings:"opsz" 40;
+  color:var(--frost);
+  line-height:.95;
+  letter-spacing:-.025em;
+}
+.fig-l{
+  font-family:var(--f-mono);
+  font-size:.68rem;
+  letter-spacing:.09em;
+  text-transform:uppercase;
+  color:var(--text-mute);
+  line-height:1.4;
+}
+
 .principles{margin-bottom:3rem}
 .principles ul{
   list-style:none;
