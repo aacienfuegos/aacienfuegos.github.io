@@ -286,12 +286,12 @@
         <h3 data-es="Domótica" data-en="Home automation">Domótica</h3>
         <p class="proj-tag" data-es="Dos casas, red aparte" data-en="Two homes, separate network">Dos casas, red aparte</p>
         <p class="proj-desc"
-           data-es="Dos casas domotizadas y gobernadas desde el mismo sitio: luces, enchufes, clima y el salón entero. Responde a la voz, al móvil y al panel de la pared, pero lo que más se nota es lo que no hay que tocar — rutinas por horario, cosas que se disparan al llegar a casa y sensores que arrancan el clima o te avisan sin que nadie pida nada. Los dispositivos viven en una VLAN propia con la salida al resto de la red bloqueada, lo que rompe el descubrimiento por mDNS que necesita HomeKit: en vez de abrir la VLAN entera, el router refleja únicamente el mDNS entre esos dos segmentos. Desde fuera se entra por túnel, con los puertos del router cerrados y doble factor."
-           data-en="Two homes automated and run from the same place: lights, plugs, climate and the whole living room. It answers to voice, to the phone and to the wall panel, but what you notice most is what nobody has to touch — schedule-driven routines, things that fire when you get home, and sensors that start the heating or ping you without anyone asking. The devices live on their own VLAN with outbound access to the rest of the network blocked, which breaks the mDNS discovery HomeKit needs: rather than opening the whole VLAN, the router reflects only mDNS between those two segments. From outside you come in through a tunnel, with the router's ports closed and two-factor auth.">
-          Dos casas domotizadas y gobernadas desde el mismo sitio: luces, enchufes, clima y el salón entero. Responde a la voz, al móvil y al panel de la pared, pero lo que más se nota es lo que no hay que tocar — rutinas por horario, cosas que se disparan al llegar a casa y sensores que arrancan el clima o te avisan sin que nadie pida nada. Los dispositivos viven en una VLAN propia con la salida al resto de la red bloqueada, lo que rompe el descubrimiento por mDNS que necesita HomeKit: en vez de abrir la VLAN entera, el router refleja únicamente el mDNS entre esos dos segmentos. Desde fuera se entra por túnel, con los puertos del router cerrados y doble factor.
+           data-es="Dos casas domotizadas y gobernadas desde el mismo sitio: luces, enchufes, clima y el salón entero. Responde a la voz, al móvil y al panel de la pared, pero lo que más se nota es lo que no hay que tocar — rutinas por horario, cosas que se disparan al llegar a casa y sensores que arrancan el clima o te avisan sin que nadie pida nada. Los dispositivos viven en una VLAN propia, aislada del resto de la red, y cuando una integración necesita cruzar se le abre el paso justo en lugar del segmento entero. Desde fuera se entra por túnel, con los puertos del router cerrados y doble factor."
+           data-en="Two homes automated and run from the same place: lights, plugs, climate and the whole living room. It answers to voice, to the phone and to the wall panel, but what you notice most is what nobody has to touch — schedule-driven routines, things that fire when you get home, and sensors that start the heating or ping you without anyone asking. The devices live on their own VLAN, isolated from the rest of the network, and when an integration needs to cross it gets exactly the opening it needs rather than the whole segment. From outside you come in through a tunnel, with the router's ports closed and two-factor auth.">
+          Dos casas domotizadas y gobernadas desde el mismo sitio: luces, enchufes, clima y el salón entero. Responde a la voz, al móvil y al panel de la pared, pero lo que más se nota es lo que no hay que tocar — rutinas por horario, cosas que se disparan al llegar a casa y sensores que arrancan el clima o te avisan sin que nadie pida nada. Los dispositivos viven en una VLAN propia, aislada del resto de la red, y cuando una integración necesita cruzar se le abre el paso justo en lugar del segmento entero. Desde fuera se entra por túnel, con los puertos del router cerrados y doble factor.
         </p>
         <ul class="chips">
-          <li>Home Assistant</li><li>HAOS</li><li>Google Assistant</li><li>HomeKit local</li><li>VLAN IoT</li><li>mDNS repeater</li><li>2FA</li>
+          <li>Home Assistant</li><li>HAOS</li><li>Google Assistant</li><li>HomeKit local</li><li>VLAN IoT</li><li>2FA</li>
         </ul>
       </div>
     </article>
@@ -400,7 +400,7 @@
       </li>
       <li>
         <span class="r-name" data-es="Escalado de alertas" data-en="Alert escalation">Escalado de alertas</span>
-        <span class="r-text" data-es="Un nodo estuvo caído 18 días con la monitorización avisando correctamente. El fallo no fue detectar: fue que el aviso no llegó a una persona. Eso es lo siguiente." data-en="A node was down for 18 days with monitoring alerting correctly. The failure was not detection: it was the alert never reaching a human. That is what comes next.">Un nodo estuvo caído 18 días con la monitorización avisando correctamente. El fallo no fue detectar: fue que el aviso no llegó a una persona. Eso es lo siguiente.</span>
+        <span class="r-text" data-es="Detectar una caída no sirve de nada si el aviso se queda en un panel que nadie mira. Falta cerrar el tramo entre la alerta y la persona: rutas de escalado, avisos que insisten hasta que alguien los reconoce y un canal que no dependa de la infraestructura que se acaba de caer." data-en="Detecting an outage is worthless if the alert sits on a dashboard nobody is looking at. What is missing is the last stretch, from alert to human: escalation paths, notifications that keep insisting until someone acknowledges them, and a channel that does not depend on the very infrastructure that just went down.">Detectar una caída no sirve de nada si el aviso se queda en un panel que nadie mira. Falta cerrar el tramo entre la alerta y la persona: rutas de escalado, avisos que insisten hasta que alguien los reconoce y un canal que no dependa de la infraestructura que se acaba de caer.</span>
       </li>
     </ul>
   </div>
@@ -413,18 +413,33 @@
   </div>
   <div class="stack">
     <div class="stack-row reveal">
-      <h3 data-es="Seguridad" data-en="Security">Seguridad</h3>
+      <h3 data-es="Seguridad del dato" data-en="Data security">Seguridad del dato</h3>
       <ul class="chips">
-        <li data-es="Clasificación de la información" data-en="Information classification">Clasificación de la información</li>
-        <li>DLP</li><li>SIEM / EDR</li><li>MITRE ATT&amp;CK</li>
-        <li data-es="Privacidad y RGPD" data-en="Privacy &amp; GDPR">Privacidad y RGPD</li>
-        <li data-es="Gobierno de seguridad" data-en="Security governance">Gobierno de seguridad</li>
-        <li data-es="Modelado de amenazas" data-en="Threat modelling">Modelado de amenazas</li>
-        <li data-es="Gestión de vulnerabilidades" data-en="Vulnerability management">Gestión de vulnerabilidades</li>
-        <li data-es="Continuidad y resiliencia" data-en="Continuity &amp; resilience">Continuidad y resiliencia</li>
-        <li>ISO 22301 · 31000</li>
-        <li data-es="Segmentación de red" data-en="Network segmentation">Segmentación de red</li>
-        <li data-es="Endurecimiento" data-en="Hardening">Endurecimiento</li>
+        <li data-es="Clasificación de la información" data-en="Information classification">Clasificación de la información</li><li>DLP</li><li data-es="Privacidad y RGPD" data-en="Privacy &amp; GDPR">Privacidad y RGPD</li>
+        <li data-es="Gobierno de salida de información" data-en="Data egress governance">Gobierno de salida de información</li>
+      </ul>
+    </div>
+    <div class="stack-row reveal">
+      <h3 data-es="Gobierno y riesgo" data-en="Governance &amp; risk">Gobierno y riesgo</h3>
+      <ul class="chips">
+        <li data-es="Gobierno de seguridad" data-en="Security governance">Gobierno de seguridad</li><li data-es="Análisis de riesgos" data-en="Risk assessment">Análisis de riesgos</li><li>ISO 27001</li>
+        <li>ISO 31000</li><li>ENS</li><li data-es="Auditoría" data-en="Audit">Auditoría</li>
+        <li data-es="Normativa y cumplimiento" data-en="Regulatory compliance">Normativa y cumplimiento</li>
+      </ul>
+    </div>
+    <div class="stack-row reveal">
+      <h3 data-es="Continuidad" data-en="Continuity">Continuidad</h3>
+      <ul class="chips">
+        <li data-es="Continuidad y resiliencia" data-en="Continuity &amp; resilience">Continuidad y resiliencia</li><li>BCP / DRP</li><li>BIA</li>
+        <li>ISO 22301</li><li data-es="Simulacros" data-en="Live exercises">Simulacros</li>
+      </ul>
+    </div>
+    <div class="stack-row reveal">
+      <h3 data-es="Defensa técnica" data-en="Technical defence">Defensa técnica</h3>
+      <ul class="chips">
+        <li data-es="Modelado de amenazas" data-en="Threat modelling">Modelado de amenazas</li><li>MITRE ATT&amp;CK</li><li>TARA</li>
+        <li>UNECE R155</li><li>SIEM / EDR</li><li data-es="Gestión de vulnerabilidades" data-en="Vulnerability management">Gestión de vulnerabilidades</li>
+        <li>Pentest</li><li data-es="Segmentación de red" data-en="Network segmentation">Segmentación de red</li><li data-es="Endurecimiento" data-en="Hardening">Endurecimiento</li>
         <li>SSO / IdP</li>
       </ul>
     </div>
@@ -432,22 +447,35 @@
       <h3 data-es="IA" data-en="AI">IA</h3>
       <ul class="chips">
         <li>Claude API</li><li>Claude Code</li><li>MCP</li>
-        <li data-es="Diseño de agentes" data-en="Agent design">Diseño de agentes</li>
-        <li data-es="Validación de salidas con esquemas" data-en="Schema-validated outputs">Validación de salidas con esquemas</li>
-        <li data-es="Revisión de código asistida" data-en="AI-assisted code review">Revisión de código asistida</li>
+        <li data-es="Diseño de agentes" data-en="Agent design">Diseño de agentes</li><li data-es="Validación de salidas con esquemas" data-en="Schema-validated outputs">Validación de salidas con esquemas</li><li data-es="Revisión de código asistida" data-en="AI-assisted code review">Revisión de código asistida</li>
+        <li data-es="Automatización de tareas" data-en="Task automation">Automatización de tareas</li>
       </ul>
     </div>
     <div class="stack-row reveal">
       <h3 data-es="Lenguajes" data-en="Languages">Lenguajes</h3>
-      <ul class="chips"><li>Python</li><li>TypeScript</li><li>Bash</li><li>SQL</li><li>Java</li><li>C / C++</li></ul>
+      <ul class="chips">
+        <li>Python</li><li>TypeScript</li><li>JavaScript</li>
+        <li>Bash</li><li>PowerShell</li><li>SQL</li>
+        <li>Java</li><li>C / C++</li><li>MATLAB</li>
+      </ul>
     </div>
     <div class="stack-row reveal">
       <h3 data-es="Desarrollo" data-en="Development">Desarrollo</h3>
-      <ul class="chips"><li>FastAPI</li><li>Next.js</li><li>React Native</li><li>Prisma</li><li>PostgreSQL</li><li>Redis</li></ul>
+      <ul class="chips">
+        <li>FastAPI</li><li>Next.js</li><li>React</li>
+        <li>React Native / Expo</li><li>Prisma</li><li>PostgreSQL</li>
+        <li>SQLite</li><li>Redis</li><li>Zod</li>
+        <li>Git</li>
+      </ul>
     </div>
     <div class="stack-row reveal">
       <h3 data-es="Infraestructura" data-en="Infrastructure">Infraestructura</h3>
-      <ul class="chips"><li>GNU/Linux</li><li>Proxmox</li><li>Docker</li><li>Traefik</li><li>OpenWrt</li><li>Tailscale</li><li>GitHub Actions</li></ul>
+      <ul class="chips">
+        <li>GNU/Linux</li><li>Proxmox</li><li>Docker</li>
+        <li>LXC</li><li>Traefik</li><li>OpenWrt</li>
+        <li>nftables</li><li>Tailscale</li><li>Cloudflare Tunnel</li>
+        <li>systemd</li><li>GitHub Actions</li>
+      </ul>
     </div>
   </div>
 </section>
