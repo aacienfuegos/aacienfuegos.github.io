@@ -783,7 +783,9 @@ h1{
 
 @media (max-width:640px){
   .topnav{display:none}
-  .lang{margin-left:auto}
+  .lang{margin-left:auto;min-height:44px}
+  .figures{grid-template-columns:repeat(2,1fr)}
+  .proj-link{margin-top:.6rem;padding-block:.8rem}
   .principles ul,
   .roadmap ul{grid-template-columns:1fr}
   .tl-item,.stack-row{grid-template-columns:1fr;gap:.5rem}
@@ -808,4 +810,87 @@ h1{
   .grain,.topbar,.hero-cta{display:none}
   body{background:#fff;color:#000}
   .reveal{opacity:1;transform:none}
+}
+
+/* ── menú móvil ─────────────────────────────── */
+
+.menu-btn{
+  display:none;
+  flex:none;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:5px;
+  width:44px;height:44px;
+  background:transparent;
+  border:1px solid var(--line);
+  border-radius:999px;
+  cursor:pointer;
+  transition:border-color .25s var(--ease);
+}
+.menu-btn:hover{border-color:var(--frost-deep)}
+.menu-bar{
+  display:block;
+  width:16px;height:1.5px;
+  background:var(--text-dim);
+  transition:transform .3s var(--ease);
+}
+.menu-btn[aria-expanded="true"] .menu-bar:first-child{transform:translateY(3.25px) rotate(45deg)}
+.menu-btn[aria-expanded="true"] .menu-bar:last-child{transform:translateY(-3.25px) rotate(-45deg)}
+
+.menu{
+  display:none;
+  position:fixed;
+  inset:0;
+  z-index:39;
+  flex-direction:column;
+  justify-content:center;
+  gap:2.2rem;
+  padding:6rem var(--pad) 3rem;
+  background:rgba(25,29,36,.98);
+  backdrop-filter:blur(18px);
+  -webkit-backdrop-filter:blur(18px);
+  opacity:0;
+  transition:opacity .26s var(--ease);
+}
+.menu.open{opacity:1}
+
+.menu-nav{display:grid}
+.menu-nav a{
+  display:flex;
+  align-items:baseline;
+  gap:1rem;
+  padding:.8rem 0;
+  font-family:var(--f-display);
+  font-weight:300;
+  font-size:clamp(1.9rem,9vw,2.6rem);
+  line-height:1.1;
+  color:var(--text);
+}
+.menu-idx{
+  font-family:var(--f-mono);
+  font-size:.72rem;
+  letter-spacing:.1em;
+  color:var(--ember);
+}
+.menu-foot{
+  display:flex;
+  flex-wrap:wrap;
+  gap:0 1.6rem;
+  padding-top:1.4rem;
+  border-top:1px solid var(--line-soft);
+  font-family:var(--f-mono);
+  font-size:.8rem;
+  color:var(--text-dim);
+}
+.menu-foot a{
+  display:inline-flex;
+  align-items:center;
+  min-height:44px;
+}
+body.menu-open{overflow:hidden}
+
+@media (max-width:640px){
+  .menu-btn{display:flex}
+  .menu:not([hidden]){display:flex}
 }

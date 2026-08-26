@@ -7,6 +7,8 @@
   const toggle = document.getElementById('lang-toggle');
   const opts = toggle ? toggle.querySelectorAll('.lang-opt') : [];
   const cvLinks = document.querySelectorAll('[data-cv-es][data-cv-en]');
+  const menuBtn = document.getElementById('menu-btn');
+  const menu = document.getElementById('menu');
 
   const stored = () => {
     try { return localStorage.getItem(STORE_KEY); } catch { return null; }
@@ -29,6 +31,11 @@
     cvLinks.forEach((el) => { el.href = lang === 'es' ? el.dataset.cvEs : el.dataset.cvEn; });
     opts.forEach((o) => o.classList.toggle('on', o.dataset.lang === lang));
     if (toggle) toggle.setAttribute('aria-label', lang === 'es' ? 'Switch to English' : 'Cambiar a español');
+    if (menuBtn) {
+      const abierto = menuBtn.getAttribute('aria-expanded') === 'true';
+      const txt = lang === 'es' ? ['Abrir menú', 'Cerrar menú'] : ['Open menu', 'Close menu'];
+      menuBtn.setAttribute('aria-label', abierto ? txt[1] : txt[0]);
+    }
   };
 
   let current = initial();
@@ -40,6 +47,34 @@
       apply(current);
       remember(current);
     });
+  }
+
+  if (menuBtn && menu) {
+    let abierto = false;
+    const pintar = () => {
+      menuBtn.setAttribute('aria-expanded', String(abierto));
+      document.body.classList.toggle('menu-open', abierto);
+      apply(current);
+    };
+    const abrir = () => {
+      abierto = true;
+      menu.hidden = false;
+      requestAnimationFrame(() => menu.classList.add('open'));
+      pintar();
+    };
+    const cerrar = () => {
+      abierto = false;
+      menu.classList.remove('open');
+      pintar();
+      const fin = () => { if (!abierto) menu.hidden = true; };
+      menu.addEventListener('transitionend', fin, { once: true });
+      setTimeout(fin, 400);
+    };
+    menuBtn.addEventListener('click', () => (abierto ? cerrar() : abrir()));
+    menu.addEventListener('click', (e) => { if (e.target.closest('a')) cerrar(); });
+    addEventListener('keydown', (e) => { if (e.key === 'Escape' && abierto) { cerrar(); menuBtn.focus(); } });
+    // al pasar a escritorio el boton desaparece y dejaria el scroll bloqueado
+    matchMedia('(min-width:641px)').addEventListener('change', (e) => { if (e.matches && abierto) cerrar(); });
   }
 
   const reveals = document.querySelectorAll('.reveal');
