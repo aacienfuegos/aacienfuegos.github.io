@@ -66,6 +66,11 @@
     onScroll();
   }
 
+  const now = new Date().getFullYear();
+
   const year = document.getElementById('year');
-  if (year) year.textContent = String(new Date().getFullYear());
+  if (year) year.textContent = String(now);
+
+  const years = document.getElementById('years');
+  if (years) years.textContent = String(now - Number(years.dataset.since));
 })();
