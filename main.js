@@ -6,6 +6,7 @@
   const nodes = document.querySelectorAll('[data-es][data-en]');
   const toggle = document.getElementById('lang-toggle');
   const opts = toggle ? toggle.querySelectorAll('.lang-opt') : [];
+  const cvLinks = document.querySelectorAll('[data-cv-es][data-cv-en]');
 
   const stored = () => {
     try { return localStorage.getItem(STORE_KEY); } catch { return null; }
@@ -25,6 +26,7 @@
   const apply = (lang) => {
     document.documentElement.lang = lang;
     nodes.forEach((el) => { el.textContent = el.dataset[lang]; });
+    cvLinks.forEach((el) => { el.href = lang === 'es' ? el.dataset.cvEs : el.dataset.cvEn; });
     opts.forEach((o) => o.classList.toggle('on', o.dataset.lang === lang));
     if (toggle) toggle.setAttribute('aria-label', lang === 'es' ? 'Switch to English' : 'Cambiar a español');
   };
