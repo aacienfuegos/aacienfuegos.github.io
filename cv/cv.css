@@ -109,30 +109,27 @@ li::before {
 
 .certs li { margin-bottom: 1mm; }
 
-body.short .xl { display: none; }
-body.short { font-size: 8.9pt; line-height: 1.34; }
-body.short section { margin-bottom: 3mm; }
-body.short .job { margin-bottom: 2.8mm; }
+@page compact { size: A4; margin: 11mm 14mm; }
 
-body.short { font-size: 8.9pt; }
+/* Una pagina */
+body.short { page: compact; font-size: 8.9pt; line-height: 1.34; }
+body.short .xl { display: none; }
 body.short header { padding-bottom: 2.4mm; margin-bottom: 3mm; }
 body.short h1 { font-size: 19.5pt; }
 body.short .role { font-size: 10.4pt; }
+body.short .contact { font-size: 8.3pt; margin-top: 1.6mm; }
 body.short h2 { margin-bottom: 2mm; }
-body.short li { margin-bottom: 0.7mm; }
+body.short section { margin-bottom: 2.5mm; }
+body.short .job { margin-bottom: 2.4mm; }
+body.short .entry { margin-bottom: 1.6mm; }
+body.short .meta { margin-bottom: 1mm; }
+body.short li { margin-bottom: 0.5mm; }
 body.short .skills { font-size: 8.5pt; }
 body.short .skills p { margin-bottom: 0.9mm; }
 body.short .certs li { margin-bottom: 0.6mm; }
-body.short section { margin-bottom: 2.5mm; }
-body.short .job { margin-bottom: 2.4mm; }
-body.short .contact { font-size: 8.3pt; margin-top: 1.6mm; }
 
-@page compact { size: A4; margin: 11mm 14mm; }
-body.short { page: compact; }
-body.short li { margin-bottom: 0.5mm; }
-body.short .entry { margin-bottom: 1.6mm; }
-body.short .meta { margin-bottom: 1mm; }
-
+/* Dos paginas */
 body:not(.short) { font-size: 9.7pt; line-height: 1.5; }
+body:not(.short) .sm { display: none; }
 body:not(.short) section { margin-bottom: 4.6mm; }
 body:not(.short) .job { margin-bottom: 4mm; }
