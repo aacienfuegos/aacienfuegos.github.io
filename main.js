@@ -10,23 +10,42 @@
   const toTop = document.getElementById('to-top');
 
   // el idioma es una propiedad de la URL: / es espanol, /en/ es ingles
-  const current = document.documentElement.lang === 'en' ? 'en' : 'es';
+  const desdeRuta = () => (location.pathname.replace(/\/+$/, '') === '/en' ? 'en' : 'es');
+  let current = document.documentElement.lang === 'en' ? 'en' : 'es';
 
   const apply = (lang) => {
     document.documentElement.lang = lang;
     nodes.forEach((el) => { el.textContent = el.dataset[lang]; });
     cvLinks.forEach((el) => { el.href = lang === 'es' ? el.dataset.cvEs : el.dataset.cvEn; });
     opts.forEach((o) => o.classList.toggle('on', o.dataset.lang === lang));
-    if (toggle) toggle.setAttribute('aria-label', lang === 'es' ? 'Switch to English' : 'Cambiar a español');
+    if (toggle) {
+      toggle.setAttribute('href', lang === 'es' ? '/en/' : '/');
+      toggle.setAttribute('hreflang', lang === 'es' ? 'en' : 'es');
+      toggle.setAttribute('aria-label', lang === 'es' ? 'Switch to English' : 'Cambiar a español');
+    }
     if (menuBtn) {
       const abierto = menuBtn.getAttribute('aria-expanded') === 'true';
       const txt = lang === 'es' ? ['Abrir menú', 'Cerrar menú'] : ['Open menu', 'Close menu'];
       menuBtn.setAttribute('aria-label', abierto ? txt[1] : txt[0]);
     }
     if (toTop) toTop.setAttribute('aria-label', lang === 'es' ? 'Volver arriba' : 'Back to top');
+    current = lang;
   };
 
   apply(current);
+
+  // el toggle es un enlace de verdad: sin JS navega a la otra pagina. Con JS
+  // cambia en el sitio y mueve la URL, para que las dos nunca se contradigan.
+  if (toggle && history.pushState) {
+    toggle.addEventListener('click', (e) => {
+      if (e.button || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+      e.preventDefault();
+      const nuevo = current === 'es' ? 'en' : 'es';
+      history.pushState({ lang: nuevo }, '', nuevo === 'en' ? '/en/' : '/');
+      apply(nuevo);
+    });
+    addEventListener('popstate', () => apply(desdeRuta()));
+  }
 
   if (menuBtn && menu) {
     let abierto = false;

@@ -31,10 +31,6 @@ CABECERA = {
 }
 
 ETIQUETA = re.compile(r'<(?P<tag>[a-zA-Z][\w-]*)(?P<attrs>(?:"[^"]*"|\'[^\']*\'|[^>"\'])*)>')
-ATRIBUTO = re.compile(r'\b(?P<clave>href|src|data-cv-es|data-cv-en)="(?P<valor>[^"]*)"')
-ABSOLUTA = ("http://", "https://", "//", "/", "#", "mailto:", "tel:", "data:")
-
-
 def volcar_ingles(doc: str) -> str:
     """Sustituye el contenido de cada elemento con data-en por su version inglesa."""
     trozos, cursor = [], 0
@@ -54,21 +50,10 @@ def volcar_ingles(doc: str) -> str:
     return "".join(trozos)
 
 
-def subir_un_nivel(doc: str) -> str:
-    """en/index.html cuelga un nivel mas abajo, asi que las rutas relativas suben."""
-    def repl(m):
-        valor = m.group("valor")
-        if valor.startswith(ABSOLUTA):
-            return m.group(0)
-        return f'{m.group("clave")}="../{valor}"'
-    return ATRIBUTO.sub(repl, doc)
-
-
 def main() -> None:
     doc = ORIGEN.read_text()
 
     doc = volcar_ingles(doc)
-    doc = subir_un_nivel(doc)
 
     doc = doc.replace('<html lang="es">', '<html lang="en">', 1)
 
@@ -84,7 +69,7 @@ def main() -> None:
 
     doc = re.sub(
         r'<a class="lang" id="lang-toggle" href="[^"]*" hreflang="en" aria-label="[^"]*">',
-        '<a class="lang" id="lang-toggle" href="../" hreflang="es" aria-label="Cambiar a español">',
+        '<a class="lang" id="lang-toggle" href="/" hreflang="es" aria-label="Cambiar a español">',
         doc, count=1)
     doc = doc.replace('<span class="lang-opt on" data-lang="es">ES</span>',
                       '<span class="lang-opt" data-lang="es">ES</span>', 1)
