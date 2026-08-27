@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
-# Regenera lo que no se edita a mano: la version inglesa y los PDF del CV.
-# Lanzar despues de tocar index.html o cv/index.html.
+# Regenera la version inglesa. Lanzar despues de tocar index.html.
+# Los PDF del CV van aparte porque tardan lo suyo y casi nunca cambian:
+# bash cv/build.sh, que ademas publica en assets los que sirve la web.
 set -euo pipefail
 cd "$(dirname "$0")"
 python3 build-en.py
-bash cv/build.sh
 echo "listo"
