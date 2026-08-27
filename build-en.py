@@ -31,6 +31,25 @@ CABECERA = {
 }
 
 ETIQUETA = re.compile(r'<(?P<tag>[a-zA-Z][\w-]*)(?P<attrs>(?:"[^"]*"|\'[^\']*\'|[^>"\'])*)>')
+TRADUCIBLE = re.compile(r'\bdata-(?:es|en)="[^"]*"')
+APOSTROFO_RECTO = re.compile(r"(?<=[A-Za-z])'(?=[A-Za-z])")
+
+
+def revisar_apostrofos(doc: str) -> None:
+    """El texto lleva apostrofo tipografico; el recto solo delimita atributos.
+
+    Solo mira dentro de data-es/data-en: es donde vive todo el texto, y asi el
+    recto de sitios como el data URI del favicon queda fuera de tiro.
+    """
+    fallos = []
+    for atributo in TRADUCIBLE.finditer(doc):
+        for apostrofo in APOSTROFO_RECTO.finditer(atributo.group(0)):
+            i = atributo.start() + apostrofo.start()
+            linea = doc[:i].count("\n") + 1
+            fallos.append(f"  linea {linea}: ...{doc[i - 25:i + 15]}...")
+    assert not fallos, "apostrofo recto en texto, usa ’ (U+2019):\n" + "\n".join(fallos)
+
+
 def volcar_ingles(doc: str) -> str:
     """Sustituye el contenido de cada elemento con data-en por su version inglesa."""
     trozos, cursor = [], 0
@@ -52,6 +71,8 @@ def volcar_ingles(doc: str) -> str:
 
 def main() -> None:
     doc = ORIGEN.read_text()
+
+    revisar_apostrofos(doc)
 
     doc = volcar_ingles(doc)
 
