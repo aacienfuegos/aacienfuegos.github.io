@@ -28,3 +28,8 @@ render "lang=es&len=short" "CV_Andres_AlvarezDeCienfuegos_ES_1pag.pdf"
 render "lang=es&len=long"  "CV_Andres_AlvarezDeCienfuegos_ES_2pag.pdf"
 render "lang=en&len=short" "CV_Andres_AlvarezDeCienfuegos_EN_1pag.pdf"
 render "lang=en&len=long"  "CV_Andres_AlvarezDeCienfuegos_EN_2pag.pdf"
+
+# El sitio solo enlaza las largas, y en GitHub Pages publicado es lo commiteado:
+# de las cuatro que salen a dist, estas dos son las que llegan a la web.
+cp "$OUT_DIR/CV_Andres_AlvarezDeCienfuegos_ES_2pag.pdf" "$ROOT/assets/CV_Andres_AlvarezDeCienfuegos.pdf"
+cp "$OUT_DIR/CV_Andres_AlvarezDeCienfuegos_EN_2pag.pdf" "$ROOT/assets/CV_Andres_AlvarezDeCienfuegos_EN.pdf"
