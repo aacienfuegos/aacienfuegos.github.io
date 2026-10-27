@@ -1,0 +1,79 @@
+# Genera los PDF del CV en un runner, porque en local no siempre hay chromium.
+# Solo genera, comprueba y deja los PDF como artefacto: no commitea ni publica.
+# Los dos PDF de assets/ se descargan del artefacto y se commitean a mano.
+name: cv-pdf
+
+on:
+  push:
+    branches-ignore:
+      - master
+    paths:
+      - "cv/**"
+      - ".github/workflows/cv-pdf.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  pdf:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Paquetes del sistema
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends qpdf poppler-utils fontconfig
+
+      - uses: astral-sh/setup-uv@07a047e608db84b3d8c06cd9a7c7dcc9c355c18e # v10.3.2
+        with:
+          version: "0.13.4"
+          enable-cache: false
+
+      - name: Genera los PDF
+        run: bash cv/build.sh
+
+      - name: Comprueba los PDF
+        run: |
+          fallo=0
+          for f in cv/dist/*.pdf; do
+            echo "== $f"
+            pdffonts "$f"
+            if pdffonts "$f" | grep -q 'Type 3'; then
+              echo "ERROR: $f lleva fuentes Type 3"; fallo=1
+            fi
+            paginas="$(qpdf --show-npages "$f")"
+            case "$f" in
+              *_1pag.pdf) esperadas=1 ;;
+              *_2pag.pdf) esperadas=2 ;;
+              *) echo "ERROR: variante desconocida $f"; fallo=1; continue ;;
+            esac
+            echo "paginas: $paginas (esperadas: $esperadas)"
+            if [ "$paginas" != "$esperadas" ]; then
+              echo "ERROR: $f tiene $paginas paginas"; fallo=1
+            fi
+          done
+          for f in assets/CV_Andres_AlvarezDeCienfuegos.pdf assets/CV_Andres_AlvarezDeCienfuegos_EN.pdf; do
+            echo "== $f"
+            pdftotext "$f" - | grep -n 'acienfuegos\.com' || { echo "ERROR: $f sin acienfuegos.com"; fallo=1; }
+            if pdftotext "$f" - | grep -q 'ciencre'; then
+              echo "ERROR: $f menciona ciencre"; fallo=1
+            fi
+          done
+          exit "$fallo"
+
+      - name: sha256 de los PDF de assets
+        run: sha256sum assets/CV_Andres_AlvarezDeCienfuegos.pdf assets/CV_Andres_AlvarezDeCienfuegos_EN.pdf
+
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: cv-pdf
+          path: |
+            assets/CV_Andres_AlvarezDeCienfuegos.pdf
+            assets/CV_Andres_AlvarezDeCienfuegos_EN.pdf
+          if-no-files-found: error
+          retention-days: 7
