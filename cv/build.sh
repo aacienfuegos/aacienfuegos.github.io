@@ -8,7 +8,7 @@ FONTS="$HOME/.local/share/fonts/cv-portfolio"
 mkdir -p "$OUT_DIR"
 
 if [ ! -d "$FONTS" ]; then
-  uv run --quiet --with fonttools python "$CV/mkfonts.py" "$CV/fonts" "$FONTS"
+  uv run --quiet --with fonttools==4.67.0 python "$CV/mkfonts.py" "$CV/fonts" "$FONTS"
   fc-cache -f "$FONTS" >/dev/null
 fi
 
