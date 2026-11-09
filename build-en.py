@@ -27,7 +27,7 @@ CABECERA = {
     ),
     "og:locale": ("es_ES", "en_US"),
     "og:locale:alternate": ("en_US", "es_ES"),
-    "og:url": ("https://andres.ciencre.xyz/", "https://andres.ciencre.xyz/en/"),
+    "og:url": ("https://acienfuegos.com/", "https://acienfuegos.com/en/"),
 }
 
 ETIQUETA = re.compile(r'<(?P<tag>[a-zA-Z][\w-]*)(?P<attrs>(?:"[^"]*"|\'[^\']*\'|[^>"\'])*)>')
@@ -85,8 +85,8 @@ def main() -> None:
         doc = doc.replace(antes, f'<meta {atributo}="{clave}" content="{en}">')
 
     doc = doc.replace(
-        '<link rel="canonical" href="https://andres.ciencre.xyz/">',
-        '<link rel="canonical" href="https://andres.ciencre.xyz/en/">', 1)
+        '<link rel="canonical" href="https://acienfuegos.com/">',
+        '<link rel="canonical" href="https://acienfuegos.com/en/">', 1)
 
     doc = re.sub(
         r'<a class="lang" id="lang-toggle" href="[^"]*" hreflang="en" aria-label="[^"]*">',

@@ -1,8 +1,9 @@
-# Sitio personal — andres.ciencre.xyz
+# Sitio personal — acienfuegos.com
 
 HTML, CSS y JS a mano, sin frameworks ni dependencias. GitHub Pages sirve
-`master` tal cual: **lo commiteado es lo publicado**, no hay CI ni build en
-el servidor.
+`master` tal cual: **lo commiteado es lo publicado**, no hay CI de
+publicacion ni build en el servidor. El unico workflow,
+`.github/workflows/cv-pdf.yml`, genera los PDF del CV y no publica.
 
 ## Builds
 
@@ -20,6 +21,24 @@ generar PDF, levanta el server y abre
 hacerlo en cada cambio del sitio ensuciaba `assets/` con bytes distintos y el
 mismo contenido. Si tocas el CV y no lanzas `cv/build.sh`, el PDF que se
 descarga de la web se queda atras.
+
+### Los PDF del CV sin `chromium` local
+
+Si no hay `chromium` en local, los PDF los genera el workflow `cv-pdf`: se
+hace push del cambio de `cv/` a la rama (salta con todo push que toque `cv/**`
+o el propio workflow, salvo a `master`; tambien a mano, con
+`workflow_dispatch`) y los dos PDF del artefacto `cv-pdf`
+(`gh run download <id> -n cv-pdf -D assets`) se commitean en `assets/` en la
+misma rama. El workflow comprueba que no haya fuentes Type 3, las paginas de
+cada variante y el dominio en los PDF, y falla si algo no cuadra. No commitea
+ni publica.
+
+Los PDF de `assets/` salen de una ejecucion cuyo `head_sha` tiene el mismo
+`cv/` y el mismo `cv-pdf.yml` que la cabeza del PR:
+`git diff --name-only <head_sha> HEAD -- cv/ .github/workflows/cv-pdf.yml`
+vacio. Si cambian despues, se lanza otra ejecucion y se commitean sus PDF. La
+descripcion del PR da el `id` de la ejecucion, su `head_sha` y el sha256 de
+cada PDF.
 
 ## Invariantes
 
@@ -94,13 +113,15 @@ Este repo **no** sigue el flujo `feat/ -> develop -> main` de las reglas
 globales: aqui solo existe `master`, y es lo que Pages publica. Rama
 `tipo/nombre` desde `master`, PR y squash merge.
 
-Cuando cambia el CV, los PDF de `assets/` entran en el mismo commit que el
-fuente: son artefactos, pero versionados es la unica forma de publicarlos.
+Cuando cambia el CV, los PDF de `assets/` entran en la misma rama que el
+fuente (con el squash merge, en el mismo commit de `master`): son artefactos,
+pero versionados es la unica forma de publicarlos.
 
 ## Herramientas
 
 `cv/build.sh` necesita `chromium`, `qpdf` y `uv` (que se trae `fonttools` para
-generar las estaticas la primera vez, ver arriba). El sitio no tiene tests, linter ni
+generar las estaticas la primera vez, ver arriba). Sin `chromium`, el workflow
+`cv-pdf` (ver Builds). El sitio no tiene tests, linter ni
 gestor de paquetes: para verlo, `python3 -m http.server` y abrir el navegador.
 
 ## Ojo
@@ -111,7 +132,7 @@ asi que gana el que va despues: cualquier regla movil nueva va en ese bloque
 final o debajo, nunca antes.
 
 `CNAME` es el que apunta el dominio a Pages. Borrarlo tira
-`andres.ciencre.xyz`.
+`acienfuegos.com`.
 
 Todo lo que se commitea en la raiz queda accesible en el dominio, incluidos
 `build.sh` y `build-en.py`. Los dotfiles no (Jekyll los ignora).
